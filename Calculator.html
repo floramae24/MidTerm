@@ -1,0 +1,68 @@
+
+<!DOCTYPE>
+<html lang="en">
+<head>
+	<meta charset= "ISO-8859-1">
+		<title> Calculator </title>
+			
+</head>
+<body>
+
+No #1 : <input type="text" id="no1"> <br>
+No #2 : <input type="text" id="no2"> <br>
+<button type="button" type="submit" id= "add" >+</button>
+<button type="button" type="submit" id="sub" >-</button>
+<button type="button" type="submit" id="mult" >*</button>
+<button type="button" type="submit" id="div" >/</button>
+<button type="button" type="submit" id="mod" >%</button><br>
+Result : <span id="result"></span>
+
+<script>
+
+	function id(reqType){
+
+	var xhr = new XMLHttpRequest();
+	var no1= document.getElementByID("no1").value;
+	var no2= document.getElementByID("no2").value;
+	var  result=document.getElementByID("result").value;
+	
+	xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				document.getElementById('result').innerHTML=xmlhttp.responseText;
+			}
+		}
+		if("+"==add)
+		{
+			result =no1+no2;
+		}
+		else if ("-"==sub)
+		{
+			result=no1-no2;
+		}
+		else if ("*"==mult)
+		{
+			result=no1*no2;
+		}
+		else if ("/"==div)
+		{
+			result=no1/no2;
+		}
+		else if ("%"==mod)
+		{
+			result=no1%no2;
+		}
+		else{
+		
+			xmlhttp.open("GET",url,true);
+			xmlhttp.send();
+		}
+
+	
+	}
+	
+
+</script>
+
+	
